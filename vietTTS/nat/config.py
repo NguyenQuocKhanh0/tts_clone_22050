@@ -17,9 +17,9 @@ class FLAGS(Namespace):
     acoustic_encoder_dim = 256
 
     # dataset
-    max_phoneme_seq_len = 256 * 1
+    max_phoneme_seq_len = 256 * 4
     assert max_phoneme_seq_len % 256 == 0  # prevent compilation error on Colab T4 GPU
-    max_wave_len = 1024 * 64 * 3
+    max_wave_len = 1024 * 64 * 3 *4
 
     # Montreal Forced Aligner
     special_phonemes = ["sil", "sp", "spn", " "]  # [sil], [sp] [spn] [word end]
