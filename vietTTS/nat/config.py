@@ -14,12 +14,12 @@ class FLAGS(Namespace):
     num_training_steps = 3_000_000
     postnet_dim = 512
     acoustic_decoder_dim = 1024
-    acoustic_encoder_dim = 256
+    acoustic_encoder_dim = 256 * 2
 
     # dataset
-    max_phoneme_seq_len = 256
+    max_phoneme_seq_len = 256 * 2
     assert max_phoneme_seq_len % 256 == 0  # prevent compilation error on Colab T4 GPU
-    max_wave_len = 1024 * 64 * 3
+    max_wave_len = 1024 * 64 * 3 * 2
 
     # Montreal Forced Aligner
     special_phonemes = ["sil", "sp", "spn", " "]  # [sil], [sp] [spn] [word end]
