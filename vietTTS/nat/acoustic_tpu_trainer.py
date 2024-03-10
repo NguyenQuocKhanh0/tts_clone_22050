@@ -153,6 +153,7 @@ def train(
             plt.close()
 
             # saving checkpoint
+            ckpt_fn = f"{ckpt_fn}_{step}" 
             with open(ckpt_fn, "wb") as f:
                 params_, aux_, rng_, optim_state_ = jax.tree_map(
                     lambda x: x[0], (params, aux, rng, optim_state)
