@@ -14,12 +14,12 @@ class FLAGS(Namespace):
     num_training_steps = 3_000_000
     postnet_dim = 512
     acoustic_decoder_dim = 1024
-    acoustic_encoder_dim = 256 * 2
+    acoustic_encoder_dim = 256
 
     # dataset
-    max_phoneme_seq_len = 256 * 2
+    max_phoneme_seq_len = 256
     assert max_phoneme_seq_len % 256 == 0  # prevent compilation error on Colab T4 GPU
-    max_wave_len = 1024 * 64 * 3 * 2
+    max_wave_len = 1024 * 64 * 3
 
     # Montreal Forced Aligner
     special_phonemes = ["sil", "sp", "spn", " "]  # [sil], [sp] [spn] [word end]
@@ -37,13 +37,13 @@ class FLAGS(Namespace):
         + ["ề", "ể", "ễ", "ệ", "ỉ", "ị", "ọ", "ỏ", "ố", "ồ"]
         + ["ổ", "ỗ", "ộ", "ớ", "ờ", "ở", "ỡ", "ợ", "ụ", "ủ"]
         + ["ứ", "ừ", "ử", "ữ", "ự", "ỳ", "ỵ", "ỷ", "ỹ", "w", "z", "j", "f"]
-        + ["ch", "ngh", "ng", "kh", "gi", "gh", "nh", "th", "tr", "qu", "ph"]
+        # + ["ch", "ngh", "ng", "kh", "gi", "gh", "nh", "th", "tr", "qu", "ph"]
     )
 
     # dsp
     mel_dim = 80
     n_fft = 1024
-    sample_rate = 22050
+    sample_rate = 16000
     fmin = 0.0
     fmax = 8000
 
